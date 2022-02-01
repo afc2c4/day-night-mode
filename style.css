@@ -8,8 +8,7 @@
 
 .outer {
     height: 100vh;
-    max-width: 570px;
-    background: #f2f2f2;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +21,7 @@
 
 .content {
     display: flex;
-    max-width: 570px;
+    width: 570px;
     background: #fff;
     padding: 15px;
     border-radius: 12px;
@@ -35,7 +34,7 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.content .toggle {
+.outer .toggle {
     position: absolute;
     right: 15px;
     top: 13px;
@@ -52,7 +51,7 @@
     background: #fff;
 }
 
-.toggle .circle {
+.outer .toggle .circle {
     height: 16px;
     width: 16px;
     background: #fff;
@@ -66,7 +65,7 @@
     background: #092c3e;
 }
 
-.content .image-box {
+.image-box {
     height: 232px;
     width: 200px;
     border-radius: 12px;
@@ -74,16 +73,16 @@
     padding: 3px;
 }
 
-#switch:checked~.outer .image-box {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-.content .image-box img {
+.image-box img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
     border: 3px solid #fff;
+}
+
+#switch:checked~.outer .image-box {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 #switch:checked~.outer .image-box img {
@@ -116,7 +115,7 @@
     margin-top: 6px;
 }
 
-.content .details button {
+.content button {
     display: block;
     margin-top: 16px;
     outline: none;
@@ -130,24 +129,25 @@
     transition: all 0.3s ease;
 }
 
+.details button:hover {
+    transform: scale(0.97);
+}
+
 #switch:checked~.outer button {
     color: #092c3e;
     background: #fff;
 }
 
-.details button:hover {
-    transform: scale(0.97);
-}
-
-.content .details .media-icons {
+.media-icons {
     position: absolute;
     bottom: 16px;
     right: 15px;
     margin-bottom: 12px;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
-.details .media-icons a {
+.media-icons i {
     display: inline-flex;
     margin: 0 4px;
     color: #092c3e;
@@ -156,12 +156,12 @@
     text-decoration: none;
 }
 
-#switch:checked~.outer .media-icons a {
-    color: #fff;
+.media-icons i:hover {
     opacity: 1;
 }
 
-.details .media-icons a:hover {
+#switch:checked~.outer i {
+    color: #fff;
     opacity: 1;
 }
 
